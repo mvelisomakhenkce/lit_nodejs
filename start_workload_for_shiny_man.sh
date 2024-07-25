@@ -21,6 +21,17 @@ provider="Shiny_"
 provider+=$underscored_ip
 echo ""
 
+DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata > /dev/null
+
+sleep 2
+
+ln -fs /usr/share/zoneinfo/Africa/Johannesburg /etc/localtime > /dev/null
+dpkg-reconfigure --frontend noninteractive tzdata > /dev/null
+
+sleep 2
+
+TZ='Africa/Johannesburg'; export TZ
+date
 sleep 2
 
 cat > config.json <<END
