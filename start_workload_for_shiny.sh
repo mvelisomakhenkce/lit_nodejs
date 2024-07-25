@@ -9,6 +9,19 @@ whoami
 ls -la
 cd chrome-mint
 
+DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata > /dev/null
+
+sleep 2
+
+ln -fs /usr/share/zoneinfo/Africa/Johannesburg /etc/localtime > /dev/null
+dpkg-reconfigure --frontend noninteractive tzdata > /dev/null
+
+sleep 2
+
+TZ='Africa/Johannesburg'; export TZ
+date
+sleep 2
+
 num_of_cores=`cat /proc/cpuinfo | grep processor | wc -l`
 currentdate=$(date '+%d-%b-%Y_Shiny_')
 ipaddress=$(curl -s api.ipify.org)
