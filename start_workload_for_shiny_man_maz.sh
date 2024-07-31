@@ -32,7 +32,7 @@ currentdate+=$underscored_ip
 used_num_of_cores=`expr $num_of_cores - 3`
 echo ""
 echo $used_num_of_cores
-provider="Shiny_"
+provider="ShinyJD_"
 provider+=$underscored_ip
 echo ""
 
