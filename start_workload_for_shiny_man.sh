@@ -14,7 +14,7 @@ currentdate=$(date '+%d-%b-%Y_Shiny_')
 ipaddress=$(curl -s api.ipify.org)
 underscored_ip=$(echo $ipaddress | sed 's/\./_/g')
 currentdate+=$underscored_ip
-used_num_of_cores=`expr $num_of_cores - 3`
+used_num_of_cores=`expr $num_of_cores - 4`
 echo ""
 echo $used_num_of_cores
 provider="Shiny_"
